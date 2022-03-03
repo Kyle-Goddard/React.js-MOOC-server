@@ -1,0 +1,23 @@
+{
+  "name": "react.js-mooc-server",
+  "version": "0.0.1",
+  "description": "Learning the fundamentals of full stack web development. An open course recommended by the React.js website. This is the express.js server component of the course (part 3). It was recommended to put this section of the course into its own git repo.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "React.js-MOOC-server"
+  },
+  "author": "Kyle Goddard",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
