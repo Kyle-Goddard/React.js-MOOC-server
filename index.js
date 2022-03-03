@@ -1,8 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 morgan.token("data", function (req, res) {
@@ -122,7 +123,19 @@ app.delete("/api/persons/:id", (request, response) => {
   response.status(204).end();
 });
 
-const PORT = 3001;
+app.put("/api/persons/:id", (request, response) => {
+  const id = Number(request.params.id);
+  const person = request.body;
+  person.id = id;
+
+  phonebook = phonebook.filter((p) => p.id !== id);
+
+  phonebook = phonebook.concat(person);
+
+  response.status(200).json(person);
+});
+
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
